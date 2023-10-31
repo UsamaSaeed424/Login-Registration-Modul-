@@ -65,5 +65,14 @@ public class Db_Connection1 {
         }
         return Ano;
     }
- 
+    
+    public ResultSet userLogin(String Accountitle,int pin){
+         try{
+            String sql="SELECT * FROM atm_details where AccName='"+Accountitle+"' and Pin="+pin+"";
+            rs=st.executeQuery(sql);
+        }catch(Exception e){
+            System.out.println(e);
+        }
+         return rs;
+     }
 }
